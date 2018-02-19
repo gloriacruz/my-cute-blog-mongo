@@ -1,0 +1,29 @@
+<%= form_for @article do |form| %>
+
+  <% if @article.errors.any? %>
+    <h3>
+      <%= pluralize(@article.errors.count, "error") %> prohibited
+      this article from being saved:
+    </h3>
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="row">
+    <div class="col-sm-2"><%= form.label :title %></div>
+    <div class="col-sm-9"><%= form.text_field :title %></div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2"><%= form.label :text %></div>
+    <div class="col-sm-9"><%= form.text_area :text %></div>
+  </div>
+
+  <div>
+    <%= form.submit :class => "btn btn-primary btn-lg btn-block" %>
+  </div>
+
+<% end %>

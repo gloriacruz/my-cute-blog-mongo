@@ -46,14 +46,6 @@ To manually start the server with default data directory
 
     $ mongod
 
-### Database creation
-
-    $ rails db:create
-
-### Database initialization
-
-    $ rails db:migrate
-
 ## Routes
 
     $ rails routes
