@@ -1,14 +1,14 @@
 <h1>Article</h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="row">
+  <div class="col-sm-2">Title:</div>
+  <div class="col-sm-9"><%= @article.title %></div>
+</div>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<div class="row">
+  <div class="col-sm-2">Text:</div>
+  <div class="col-sm-9"><%= @article.text %></div>
+</div>
 
 <%= link_to 'Edit', edit_article_path %> |
 <%= link_to 'Delete', article_path,
