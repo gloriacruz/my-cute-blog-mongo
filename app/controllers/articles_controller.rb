@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
     # render plain: params[:article].inspect
     @article = Article.new(article_params)
     if @article.save
-      redirect_to @article
+      redirect_to articles_path
     else
       render 'new'
     end
@@ -42,6 +42,13 @@ class ArticlesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  # DELETE /articles/:id
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
   end
 
   private
