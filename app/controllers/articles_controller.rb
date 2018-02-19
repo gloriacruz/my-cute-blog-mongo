@@ -18,6 +18,11 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  # GET /articles/:id/edit
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   # POST /articles
   def create
     # render plain: params[:article].inspect
@@ -29,6 +34,15 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # PUT /articles/:id
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render 'edit'
+    end
+  end
 
   private
     # Strong parameters: We have to whitelist our controller parameters to prevent wrongful mass assignment.
