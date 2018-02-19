@@ -12,18 +12,18 @@
     </ul>
   <% end %>
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+  <div class="row">
+    <div class="col-sm-2"><%= form.label :title %></div>
+    <div class="col-sm-9"><%= form.text_field :title %></div>
+  </div>
 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
+  <div class="row">
+    <div class="col-sm-2"><%= form.label :text %></div>
+    <div class="col-sm-9"><%= form.text_area :text %></div>
+  </div>
 
-  <p>
-    <%= form.submit %>
-  </p>
+  <div>
+    <%= form.submit :class => "btn btn-primary btn-lg btn-block" %>
+  </div>
 
 <% end %>

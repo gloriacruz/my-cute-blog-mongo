@@ -2,18 +2,22 @@
 
 <h2><%= link_to 'New Article', new_article_path %></h2>
 
-<table>
-  <tr>
-    <th>Title</th>
-  </tr>
-
-  <% @articles.each do |article| %>
+<table class="table table-bordered table-hover table-sm">
+  <thead>
     <tr>
-      <td><%= article.title %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Delete', article_path(article),
-        method: :delete, data: {confirm: "Are you sure?"} %></td>
+      <th scope="col" colspan="4">Title</th>
     </tr>
-  <% end %>
-</table>
+  </thead>
+
+<% @articles.each do |article| %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= article.title %></th>
+      <th><%= link_to 'Show', article_path(article) %></th>
+      <th><%= link_to 'Edit', edit_article_path(article) %></th>
+      <th><%= link_to 'Delete', article_path(article),
+        method: :delete, data: {confirm: "Are you sure?"} %></th>
+    </tr>
+  </tbody>
+<% end %>
+
