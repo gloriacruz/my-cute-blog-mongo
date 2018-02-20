@@ -10,7 +10,18 @@
   <div class="col-sm-9"><%= @article.text %></div>
 </div>
 
-<%= link_to 'Edit', edit_article_path %> |
-<%= link_to 'Delete', article_path,
-        method: :delete, data: {confirm: "Are you sure?"} %> |
-<%= link_to 'Back', articles_path %>
+<div>
+  <%= link_to 'Edit', edit_article_path %> |
+  <%= link_to 'Delete', article_path,
+          method: :delete, data: {confirm: "Are you sure?"} %> |
+  <%= link_to 'Back', articles_path %>
+</div>
+
+<hr/>
+
+<h2>Comments</h2>
+<!-- Automatically creates a loop -->
+<%= render @article.comments %>
+
+<h3>Add a comment:</h3>
+<%= render 'comments/form'%>
