@@ -21,7 +21,11 @@
 
 <h2>Comments</h2>
 <!-- Automatically creates a loop -->
-<%= render @article.comments %>
+<div id="comments_section">
+  <%= render @article.comments %>
+</div>
+
+<br/>
 
 <h3>Add a comment:</h3>
-<%= render 'comments/form'%>
+<%= render 'comments/form' %>
