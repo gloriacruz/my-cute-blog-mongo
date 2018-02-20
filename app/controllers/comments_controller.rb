@@ -4,9 +4,17 @@ class CommentsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.new(comment_params)
-    if @comment.save
-      redirect_to article_path(@article)
+
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to article_path(@article) }
+        format.js
+      else
+        status 422
+      end
     end
+    # puts "no ajax"
+    # redirect_to article_path(@article)
   end
 
   # DELETE /articles/:article_id/comments/:id
